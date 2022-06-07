@@ -10,8 +10,7 @@
     with_items:
        - 'expert'
        - 'echo "{{ansible_ssh_pass}}" | sudo -su'
-       - 'backupcli.pl -n FMC_backup_CLI_testfmc2022'
-       - 'sshpass -p "{{ansible_ssh_pass}}" scp -o StrictHostKeyChecking=no /var/sf/backup/FMC_backup_CLI_testfmc2022.tar "{{ansible_user}}"@158.35.215.42:/config_backup/test_fmc/'
+       - 'ls' 
     vars:
      ansible_user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
      ansible_ssh_pass: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
